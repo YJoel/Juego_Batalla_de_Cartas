@@ -27,7 +27,7 @@ const rutasCartas = {
     ["./recursosJuego/D8.jpg", "D"],
     ["./recursosJuego/D6.jpg", "D"],
   ],
-  rutaPorDefecto: "./recursosJuego/LogoCarta.jpg",
+  rutaPorDefecto: "./recursosJuego/LogoCarta-V.jpg",
   peso: [10, 8, 6, 10, 8, 6],
 };
 
@@ -122,20 +122,20 @@ const cartasDerecha = document.querySelectorAll(".ladoDerecho>.fila>img");
 
 cartasDerecha.forEach((elemento, indice, array) => {
   array[indice].addEventListener("click", () => {
-    if (document.querySelector(".ladoDerecho>.fila>img.move") !== null) {
+    if (document.querySelector("img.opacity-0") !== null) {
       document
-        .querySelector(".ladoDerecho>.fila>img.move")
-        .classList.remove("move");
+        .querySelector("img.opacity-0")
+        .classList.remove("opacity-0");
     }
-    array[indice].className = "move";
+    array[indice].className = "opacity-0";
 
     let eleccionMaquina = jugadorMaquina.elegirCarta();
-    cartasIzquierda[eleccionMaquina].className = "move";
+    cartasIzquierda[eleccionMaquina].className = "opacity-0";
+
+    document.getElementById("j1").src = rutasCartas.rutas[eleccionMaquina][0];
+    document.getElementById("j2").src = rutasCartas.rutas[indice][0];
 
     console.log(rutasCartas.rutas)
-    array[indice].src = rutasCartas.rutas[indice][0];
-    cartasIzquierda[eleccionMaquina].src =
-      rutasCartas.rutas[eleccionMaquina][0];
 
     let cartasElegidas = {
       jugador: {
@@ -149,8 +149,8 @@ cartasDerecha.forEach((elemento, indice, array) => {
     };
 
     setTimeout(() => {
-      array[indice].src = rutasCartas.rutaPorDefecto;
-      cartasIzquierda[eleccionMaquina].src = rutasCartas.rutaPorDefecto;
+      document.getElementById("j2").src = rutasCartas.rutaPorDefecto;
+      document.getElementById("j1").src = rutasCartas.rutaPorDefecto;
 
       setTimeout(() => {
         if (
@@ -268,8 +268,8 @@ cartasDerecha.forEach((elemento, indice, array) => {
         }
       }, 500);
 
-      array[indice].classList.remove("move");
-      cartasIzquierda[eleccionMaquina].classList.remove("move");
+      array[indice].classList.remove("opacity-0");
+      cartasIzquierda[eleccionMaquina].classList.remove("opacity-0");
 
       [rutasCartas.rutas, rutasCartas.peso] = desordenar([rutasCartas.rutas, rutasCartas.peso]);
     }, 3000);
