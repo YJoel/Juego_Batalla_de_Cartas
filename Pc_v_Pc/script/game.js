@@ -126,48 +126,6 @@ const cartasDerecha = document.querySelectorAll(".ladoDerecho>.fila>img");
 
 let eleccionJugador1 = undefined;
 let eleccionJugador2 = undefined;
-// cartasIzqui
-// erda.forEach((elemento, indice, array) => {
-//   array[indice].addEventListener("click", () => {
-//     if (document.querySelector("ladoIzquierdo img.opacity-0") !== null) {
-//       document.querySelector("img.opacity-0").classList.remove("opacity-0");
-//     }
-//     array[indice].className = "opacity-0";
-
-//     document.getElementById("j1").src = rutasCartas.rutas[indice][0];
-
-//     eleccionJugador1 = {
-//       tipo: rutasCartas.rutas[indice][1],
-//       peso: rutasCartas.peso[indice],
-//     };
-//     if (eleccionJugador2 !== undefined) {
-//       console.log(eleccionJugador2);
-//       console.log("Inicia el juego");
-//       game();
-//     }
-//   });
-// });
-
-// cartasDerecha.forEach((elemento, indice, array) => {
-//   array[indice].addEventListener("click", () => {
-//     if (document.querySelector("ladoDercho img.opacity-0") !== null) {
-//       document.querySelector("img.opacity-0").classList.remove("opacity-0");
-//     }
-//     array[indice].className = "opacity-0";
-
-//     document.getElementById("j2").src = rutasCartas.rutas[indice][0];
-
-//     eleccionJugador2 = {
-//       tipo: rutasCartas.rutas[indice][1],
-//       peso: rutasCartas.peso[indice],
-//     };
-//     if (eleccionJugador1 !== undefined) {
-//       console.log(eleccionJugador1);
-//       console.log("Inicia el juego");
-//       game();
-//     }
-//   });
-// });
 
 setInterval(() => {
   setTimeout(() => {

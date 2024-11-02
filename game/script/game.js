@@ -135,8 +135,6 @@ cartasDerecha.forEach((elemento, indice, array) => {
     document.getElementById("j1").src = rutasCartas.rutas[eleccionMaquina][0];
     document.getElementById("j2").src = rutasCartas.rutas[indice][0];
 
-    console.log(rutasCartas.rutas)
-
     let cartasElegidas = {
       jugador: {
         tipo: rutasCartas.rutas[indice][1],
